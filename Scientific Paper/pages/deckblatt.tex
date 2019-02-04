@@ -1,0 +1,98 @@
+% ==============================================================================
+%  ____            _    _     _       _   _
+% |  _ \  ___  ___| | _| |__ | | __ _| |_| |_
+% | | | |/ _ \/ __| |/ / '_ \| |/ _` | __| __|
+% | |_| |  __/ (__|   <| |_) | | (_| | |_| |_
+% |____/ \___|\___|_|\_\_.__/|_|\__,_|\__|\__|
+% ==============================================================================
+\thispagestyle{empty} % Entfernt die Kopf- und Fußzeile für diese Seite.
+{
+\fontfamily{phv}\selectfont % Legt den Schrifttypus fest (phv = Helvetica).
+% ==============================================================================
+
+% ==============================================================================
+% Kopf des Deckblattes mit Logos
+% ==============================================================================
+
+\hspace{-0.5cm} % Horiztontalen Abstand.
+
+\begin{figure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{assets/images/logos/hs_koblenz_logo.png} % Logo der Firma.
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{assets/images/logos/hs_koblenz_logo.png} % Logo der Hochschule.
+    \end{subfigure}
+\end{figure}
+
+% ==============================================================================
+\begin{center}
+% ==============================================================================
+
+% ==============================================================================
+% Art / Titel der Arbeit
+% ==============================================================================
+
+\vspace{3cm} % Vertikaler Abstand.
+{\large \textbf{ArtDerArbeit}} % Art der Arbeit.
+
+\vspace{0.5cm} % Vertikaler Abstand.
+\parbox{0.7\textwidth}{ % Box mit Inhalt im Blocksatz.
+    \begin{center}
+        \huge \textbf{TitelDerArbeit} % Titel der Arbeit.
+    \end{center}
+}
+
+% ==============================================================================
+% Abschluss, Studiengang, etc.
+% ==============================================================================
+
+\vspace{3cm} % Vertikaler Abstand.
+\parbox{0.7\textwidth}{ % Box mit Inhalt im Blocksatz.
+    \begin{center}
+        zur Erlangung des akademischen Grades\\
+        \textbf{Bachelor of Engineering (B. Eng.)}\\ % Art des Abschlusses.
+        im Studiengang Werkstofftechnik Glas und Keramik\\ % Studiengang.
+    \end{center}
+}
+
+\vspace{1cm} % Vertikaler Abstand.
+\parbox{0.7\textwidth}{ % Box mit Inhalt im Blocksatz.
+    \begin{center}
+        an der Hochschule Koblenz\\ % Name der Einrichtung.
+        WesterWaldCampus H\"ohr-Grenzhausen\\
+        Fachbereich Ingenieurwesen % Bereich der Einrichtung.
+    \end{center}
+}
+
+% ==============================================================================
+% Name des Autors
+% ==============================================================================
+
+\vfill % Definiert einen vertikalen Zwischenraum, der jede beliebige Länge annehmen kann.
+{\fontsize{12}{12} \selectfont % Legt die Schriftgröße fest.
+    vorgelegt von\\
+    \textbf{NameDesAutors} % Name des Autors.
+}\\
+\vspace{1cm} % Vertikaler Abstand.
+
+% ==============================================================================
+% Namen der Betreuer
+% ==============================================================================
+
+\hrule % Horizontale Trennlinie.
+\vspace{1cm} % Vertikaler Abstand.
+{\fontsize{12pt}{12} \selectfont % Legt die Schriftgröße fest.
+    \begin{tabular}{lcl}
+        Betreuer       &:& Herr Prof. Dr. Max Mustermann\\[0.5ex] % Name 1.
+                       &:& Frau Prof. Dr. Petra M\"uller\\[0.5ex] % Name 2 usw.
+        Eingereicht am &:& \today % Setzt das Datum automatisch auf den Tag der Erstellung des PDFs.
+    \end{tabular}
+}
+
+% ==============================================================================
+\end{center}
+}
+% ==============================================================================
