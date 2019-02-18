@@ -93,7 +93,7 @@
 \definecolor{color__background}{HTML}{0f1218}         % Backgroundcolor.
 \definecolor{color__background--second}{HTML}{282f35} % Second Background Color.
 \definecolor{color__font}{HTML}{f8f8f8}               % Font Color.
-\definecolor{color__font--second}{HTML}{818181}       % Second Font Color.
+\definecolor{color__font--second}{HTML}{888888}       % Second Font Color.
 \definecolor{color__accent}{HTML}{cf4235}             % Accent Color.
 
 % ==================================================
