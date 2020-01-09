@@ -17,7 +17,7 @@
 % 3. Fonts
 % 4. Colors
 % 5. Styles
-% 6. Other Packages
+% 6. Miscellaneous
 % 7. Commands
 
 % ==============================================================================
@@ -25,12 +25,13 @@
 % ==============================================================================
 
 \RequirePackage[hidelinks, unicode]{hyperref}
+\RequirePackage{bookmark}
 \hypersetup {
-    pdfstartview = {FitV},
-    pdfview = {FitH},
-    pdffitwindow = {true}
-    pdftitle = {Tim Schneider - Resume},
-    pdfauthor = {Tim Schneider}
+  pdfstartview = {FitV},
+  pdfview = {FitH},
+  pdffitwindow = true,
+  pdftitle = {Tim Schneider - Resume},
+  pdfauthor = {Tim Schneider}
 }
 
 \RequirePackage[utf8]{inputenc}
@@ -42,26 +43,25 @@
 % ==============================================================================
 
 \RequirePackage[
-    top=1.5cm,
-    bottom=2cm,
-    left=2cm,
-    right=2cm,
-    nohead,
-    footskip=0.5cm
-]{geometry} % Set Page Margins.
+  top=1.5cm,
+  bottom=2cm,
+  left=2cm,
+  right=2cm,
+  nohead,
+  footskip=0.5cm
+]{geometry}
 
-\RequirePackage{parskip}
+\setlength{\parskip}{0pt}
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{} % Clear Header & Footer.
-\renewcommand{\headrulewidth}{0pt} % Remove Header Rule.
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
 
 % ==============================================================================
 % 3. Fonts
 % ==============================================================================
 
-% ==================================================
 % Font - Packages
 % ==================================================
 
@@ -69,7 +69,6 @@
 \RequirePackage{merriweather}
 \RequirePackage{fontawesome}
 
-% ==================================================
 % Font - Aliases
 % ==================================================
 
@@ -79,71 +78,63 @@
 % 4. Colors
 % ==============================================================================
 
-% ==================================================
 % Colors - Packages
 % ==================================================
 
-\RequirePackage{xcolor}                               % Package for setting Colors.
-\RequirePackage{pagecolor}                            % Package for setting Page Colors.
+\RequirePackage{xcolor}
+\RequirePackage{pagecolor}
 
-% ==================================================
 % Colors - Definition
 % ==================================================
 
-\definecolor{color__background}{HTML}{0f1218}         % Backgroundcolor.
-\definecolor{color__background--second}{HTML}{282f35} % Second Background Color.
-\definecolor{color__font}{HTML}{f8f8f8}               % Font Color.
-\definecolor{color__font--second}{HTML}{888888}       % Second Font Color.
-\definecolor{color__accent}{HTML}{cf4235}             % Accent Color.
+\definecolor{color__white}{HTML}{ffffff}
+\definecolor{color__grey}{HTML}{9e9e9e}
+\definecolor{color__black}{HTML}{101016}
 
-% ==================================================
 % Colors - Set
 % ==================================================
 
-\pagecolor{color__background}                         % Set Page Background Color.
-\color{color__font}                                   % Set Page Font Color.
+\pagecolor{color__white}
+\color{color__black}
 
 % ==============================================================================
 % 5. Styles
 % ==============================================================================
 
-% ==================================================
 % Style - Name
 % ==================================================
 
 \newcommand*{\resumeStyleName}[1]{
-    \fontHeading
-    \fontsize{28pt}{1em}
-    \color{color__accent}
-    \textbf{#1}
+  \fontHeading
+  \fontsize{28pt}{1em}
+  \color{color__black}
+  \textbf{#1}
 }
 
-% ==================================================
 % Style - Personal Informations
 % ==================================================
 
 \newcommand*{\resumeStyleData}[2]{
-    {\leavevmode\color{color__font--second}#1}
-    &
-    {#2}\\
+  {\leavevmode\color{color__black}#1}
+  &
+  {#2}\\
 }
 
-% ==================================================
 % Style - Section
 % ==================================================
 
 \renewcommand*{\section}[1]{
-    {
-        \vspace{20pt}
-        \fontHeading
-        \fontsize{18pt}{1em}
-        \color{color__accent}
-        \textbf{#1}
-        \vhrulefill{2pt}
-    }
+  {
+    \par\addvspace{24pt}
+    \fontHeading
+    \fontsize{18pt}{0em}
+    \color{color__black}
+    \textbf{#1}
+    \vhrulefill{2pt}
+    \par\nobreak\addvspace{10pt}
+  }
 }
 
-% ==================================================
 % Style - Entry
 % ==================================================
 
@@ -151,56 +142,51 @@
 \renewcommand*{\arraystretch}{2}
 
 \newcommand*{\resumeStyleEntry}[2]{
-    \parbox[b]{\hsize}{\raggedleft\color{color__font--second}#1}
-    &
-    \parbox[t]{\hsize}{#2}\\
+  \parbox[b]{\hsize}{\raggedleft\color{color__black}#1}
+  &
+  \parbox[t]{\hsize}{#2}\\
 }
 
-% ==================================================
 % Style - Footer
 % ==================================================
 
 \newcommand*{\resumeStyleFooter}[1]{
-    {
-        \fontsize{10pt}{1em}
-        \selectfont
-        \color{color__background--second}
-        #1
-    }
+  {
+    \fontsize{10pt}{1em}
+    \selectfont
+    \color{color__grey}
+    #1
+  }
 }
 
 % ==============================================================================
-% 6. Other Packages
+% 6. Miscellaneous
 % ==============================================================================
 
-% ==================================================
 % Images
 % ==================================================
 
 \RequirePackage{tikz}
 
-% ==================================================
-% Tables
+% Spreadsheets
 % ==================================================
 
 \RequirePackage{tabularx}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % Left-aligned with width specification.
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}   % Centered with width specification.
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}  % Right-aligned with width specification.
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
-% ==================================================
 % Utility
 % ==================================================
 
-\RequirePackage{xifthen} % For If-Statments.
+\RequirePackage{xifthen}
 
-\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@} % Horizontal line with specific thickness.
+\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 
 % ==============================================================================
 % 7. Commands
 % ==============================================================================
 
-% ==================================================
 % Commands - Personal Informations
 % ==================================================
 
@@ -212,100 +198,93 @@
 \newcommand*{\resumeEMail}[1]{\renewcommand{\resumeEMail}{#1}}
 \newcommand*{\resumeWebsite}[1]{\renewcommand{\resumeWebsite}{#1}}
 
-% ==================================================
 % Commands - Header
 % ==================================================
 
 \newcommand*{\makeHeader}{
 
-    % ==================================================
-    % Commands - Header - Name
-    % ==================================================
+  % Commands - Header - Name
+  % ==================================================
 
-    \newcommand*{\makeName}{
-        {\resumeStyleName\resumeName}
-        \vspace{20pt}
-    }
+  \newcommand*{\makeName}{
+    {\resumeStyleName\resumeName}
+    \vspace{20pt}
+  }
 
-    % ==================================================
-    % Commands - Header - Personal Informations
-    % ==================================================
+  % Commands - Header - Personal Informations
+  % ==================================================
 
-    \newcommand*{\makeData}{
-        \setlength{\tabcolsep}{5pt}
-        \renewcommand*{\arraystretch}{1.5}
+  \newcommand*{\makeData}{
+    \setlength{\tabcolsep}{5pt}
+    \renewcommand*{\arraystretch}{1.5}
 
-        \begin{tabularx}{\linewidth}{R{0.5cm}X}
-            % Date of Birth.
-            \ifthenelse{\equal{\resumeBirthdate}{}}
-                {}
-                {\resumeStyleData{\faBirthdayCake}{\resumeBirthdate}}
-            % Adress.
-            \ifthenelse{\equal{\resumeAdress}{}}
-                {}
-                {\resumeStyleData{\faHome}{\resumeAdress}}
-            % Phone.
-            \ifthenelse{\equal{\resumePhone}{}}
-                {}
-                {\resumeStyleData{\faPhone}{\resumePhone}}
-            % E-Mail.
-            \ifthenelse{\equal{\resumeEMail}{}}
-                {}
-                {\resumeStyleData{\faEnvelope}{\href{mailto:\resumeEMail}{\resumeEMail}}}
-            % Personal Website.
-            \ifthenelse{\equal{\resumeWebsite}{}}
-                {}
-                {\resumeStyleData{\faGlobe}{\href{https://\resumeWebsite}{\resumeWebsite}}}
-        \end{tabularx}
-    }
+    \begin{tabularx}{\linewidth}{R{0.5cm}X}
+      % Date of Birth
+      \ifthenelse{\equal{\resumeBirthdate}{}}
+        {}
+        {\resumeStyleData{\faBirthdayCake}{\resumeBirthdate}}
+      % Adress
+      \ifthenelse{\equal{\resumeAdress}{}}
+        {}
+        {\resumeStyleData{\faHome}{\resumeAdress}}
+      % Phone
+      \ifthenelse{\equal{\resumePhone}{}}
+        {}
+        {\resumeStyleData{\faPhone}{\resumePhone}}
+      % E-Mail
+      \ifthenelse{\equal{\resumeEMail}{}}
+        {}
+        {\resumeStyleData{\faEnvelope}{\href{mailto:\resumeEMail}{\resumeEMail}}}
+      % Website
+      \ifthenelse{\equal{\resumeWebsite}{}}
+        {}
+        {\resumeStyleData{\faGlobe}{\href{https://\resumeWebsite}{\resumeWebsite}}}
+    \end{tabularx}
+  }
 
-    % ==================================================
-    % Commands - Header - Picture
-    % ==================================================
+  % Commands - Header - Picture
+  % ==================================================
 
-    \newlength\resumeWidthPicture
-    \pgfmathsetlength{\resumeWidthPicture}{5.5cm}
+  \newlength\resumeWidthPicture
+  \pgfmathsetlength{\resumeWidthPicture}{5.5cm}
 
-    \newcommand*{\makePicture}{
-        \raggedleft\begin{tikzpicture}
-            \color{color__background--second}\draw (0, 0) circle (\resumeWidthPicture/2+0.3cm);
-            \clip (0, 0) circle (\resumeWidthPicture/2);
-            \node[
-                anchor=north west,
-                inner sep=0pt,
-                outer sep=0pt
-            ] at (-\resumeWidthPicture/2, \resumeWidthPicture/2) {
-                \includegraphics[width=\resumeWidthPicture]{\resumePicture}
-            };
-        \end{tikzpicture}
-    }
+  \newcommand*{\makePicture}{
+    \raggedleft\begin{tikzpicture}
+      \color{color__grey}\draw (0, 0) circle (\resumeWidthPicture/2+0.3cm);
+      \clip (0, 0) circle (\resumeWidthPicture/2);
+      \node[
+        anchor=north west,
+        inner sep=0pt,
+        outer sep=0pt
+      ] at (-\resumeWidthPicture/2, \resumeWidthPicture/2) {
+        \includegraphics[width=\resumeWidthPicture]{\resumePicture}
+      };
+    \end{tikzpicture}
+  }
 
-    % ==================================================
-    % Commands - Header - Layout
-    % ==================================================
+  % Commands - Header - Layout
+  % ==================================================
 
-    \begin{minipage}[c]{0.6\linewidth}
-        \makeName
-        \makeData
-    \end{minipage}
-    \begin{minipage}[c]{0.39\linewidth}
-        \makePicture
-    \end{minipage}
+  \begin{minipage}[c]{0.6\linewidth}
+    \makeName
+    \makeData
+  \end{minipage}
+  \begin{minipage}[c]{0.39\linewidth}
+    \makePicture
+  \end{minipage}
 
 }
 
-% ==================================================
 % Commands - Entry
 % ==================================================
 
 \newcommand*{\resumeEntry}{\resumeStyleEntry}
 
-% ==================================================
 % Commands - Footer
 % ==================================================
 
 \newcommand*{\makeFooter}[3]{
-    \fancyfoot[L]{\resumeStyleFooter{#1}}
-    \fancyfoot[C]{\resumeStyleFooter{#2}}
-    \fancyfoot[R]{\resumeStyleFooter{#3}}
+  \fancyfoot[L]{\resumeStyleFooter{#1}}
+  \fancyfoot[C]{\resumeStyleFooter{#2}}
+  \fancyfoot[R]{\resumeStyleFooter{#3}}
 }

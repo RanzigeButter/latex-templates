@@ -5,26 +5,25 @@
 % | |_| |  __/ (__|   <| |_) | | (_| | |_| |_
 % |____/ \___|\___|_|\_\_.__/|_|\__,_|\__|\__|
 % ==============================================================================
-\thispagestyle{empty} % Entfernt die Kopf- und Fußzeile für diese Seite.
+\thispagestyle{empty}
 {
-\fontfamily{phv}\selectfont % Legt den Schrifttypus fest (phv = Helvetica).
+\fontfamily{phv}\selectfont % phv = Helvetica
 % ==============================================================================
 
 % ==============================================================================
-% Kopf des Deckblattes mit Logos
+% Logos
 % ==============================================================================
 
-\hspace{-0.5cm} % Horiztontalen Abstand.
-
+\hspace{-0.5cm}
 \begin{figure}
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{assets/images/logos/hs_koblenz_logo.png} % Logo der Firma.
-    \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{assets/images/logos/hs_koblenz_logo.png} % Logo der Hochschule.
-    \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/images/logo.png}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/images/logo.png}
+  \end{subfigure}
 \end{figure}
 
 % ==============================================================================
@@ -32,64 +31,64 @@
 % ==============================================================================
 
 % ==============================================================================
-% Art / Titel der Arbeit
+% Type and title of the thesis
 % ==============================================================================
 
-\vspace{3cm} % Vertikaler Abstand.
-{\large \textbf{ArtDerArbeit}} % Art der Arbeit.
+\vspace{3cm}
+{\large \textbf{TYPE}}
 
-\vspace{0.5cm} % Vertikaler Abstand.
-\parbox{0.7\textwidth}{ % Box mit Inhalt im Blocksatz.
-    \begin{center}
-        \huge \textbf{TitelDerArbeit} % Titel der Arbeit.
-    \end{center}
+\vspace{0.5cm}
+\parbox{0.7\textwidth}{
+  \begin{center}
+    \huge \textbf{TITLE}
+  \end{center}
 }
 
 % ==============================================================================
-% Abschluss, Studiengang, etc.
+% Degree
 % ==============================================================================
 
-\vspace{3cm} % Vertikaler Abstand.
-\parbox{0.7\textwidth}{ % Box mit Inhalt im Blocksatz.
-    \begin{center}
-        zur Erlangung des akademischen Grades\\
-        \textbf{Bachelor of Engineering (B. Eng.)}\\ % Art des Abschlusses.
-        im Studiengang Werkstofftechnik Glas und Keramik\\ % Studiengang.
-    \end{center}
+\vspace{3cm}
+\parbox{0.7\textwidth}{
+  \begin{center}
+    zur Erlangung des akademischen Grades\\
+    \textbf{Bachelor of Engineering (B. Eng.)}\\
+    im Studiengang Werkstofftechnik Glas und Keramik\\
+  \end{center}
 }
 
-\vspace{1cm} % Vertikaler Abstand.
-\parbox{0.7\textwidth}{ % Box mit Inhalt im Blocksatz.
-    \begin{center}
-        an der Hochschule Koblenz\\ % Name der Einrichtung.
-        WesterWaldCampus H\"ohr-Grenzhausen\\
-        Fachbereich Ingenieurwesen % Bereich der Einrichtung.
-    \end{center}
+\vspace{1cm}
+\parbox{0.7\textwidth}{
+  \begin{center}
+    an der Hochschule Koblenz\\
+    WesterWaldCampus H\"ohr-Grenzhausen\\
+    Fachbereich Ingenieurwesen
+  \end{center}
 }
 
 % ==============================================================================
-% Name des Autors
+% Author
 % ==============================================================================
 
-\vfill % Definiert einen vertikalen Zwischenraum, der jede beliebige Länge annehmen kann.
-{\fontsize{12}{12} \selectfont % Legt die Schriftgröße fest.
-    vorgelegt von\\
-    \textbf{NameDesAutors} % Name des Autors.
+\vfill
+{\fontsize{12}{12} \selectfont
+  vorgelegt von\\
+  \textbf{AUTHOR}
 }\\
-\vspace{1cm} % Vertikaler Abstand.
+\vspace{1cm}
 
 % ==============================================================================
-% Namen der Betreuer
+% Supervisors
 % ==============================================================================
 
-\hrule % Horizontale Trennlinie.
-\vspace{1cm} % Vertikaler Abstand.
-{\fontsize{12pt}{12} \selectfont % Legt die Schriftgröße fest.
-    \begin{tabular}{lcl}
-        Betreuer       &:& Herr Prof. Dr. Max Mustermann\\[0.5ex] % Name 1.
-                       &:& Frau Prof. Dr. Petra M\"uller\\[0.5ex] % Name 2 usw.
-        Eingereicht am &:& \today % Setzt das Datum automatisch auf den Tag der Erstellung des PDFs.
-    \end{tabular}
+\hrule
+\vspace{1cm}
+{\fontsize{12pt}{12} \selectfont
+  \begin{tabular}{lcl}
+    Betreuer       &:& Herr Prof. Dr. Max Mustermann\\[0.5ex]
+                   &:& Frau Prof. Dr. Petra M\"uller\\[0.5ex]
+    Eingereicht am &:& \today
+  \end{tabular}
 }
 
 % ==============================================================================

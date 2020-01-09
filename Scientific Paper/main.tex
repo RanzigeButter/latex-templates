@@ -7,164 +7,163 @@
 %                                                       |_|
 % ==============================================================================
 
-
+% Table of Contens
+%
+% 1. General
+% 2. Language
+% 3. Layout
+% 4. Header and Footer
+% 5. Text
+% 6. Literature and References
+% 7. Images
+% 8. Spreadsheets
+% 9. Symbols
+% 10. Document
 
 % ==============================================================================
-%  ____       _   _   _                      __  ____            _
-% / ___|  ___| |_| |_(_)_ __   __ _ ___     / / |  _ \ __ _  ___| | ____ _  __ _  ___  ___
-% \___ \ / _ \ __| __| | '_ \ / _` / __|   / /  | |_) / _` |/ __| |/ / _` |/ _` |/ _ \/ __|
-%  ___) |  __/ |_| |_| | | | | (_| \__ \  / /   |  __/ (_| | (__|   < (_| | (_| |  __/\__ \
-% |____/ \___|\__|\__|_|_| |_|\__, |___/ /_/    |_|   \__,_|\___|_|\_\__,_|\__, |\___||___/
-%                             |___/                                        |___/
-% ==============================================================================
-
-% ==============================================================================
-% General / Allgemein
+% 1. General
 % ==============================================================================
 
 \documentclass[
-    paper=a4,           % Layout Din A4.
-    oneside,            % Ändern auf twoside und % vor den \cleardoubleemptypage Befehlen entfernen für Buchlayout.
-    fontsize=12pt,      % Standartschriftgröße.
-    headinclude,        % Kopfzeile wird beim Seiten-Layouts mit berücksichtigt.
-    headsepline,        % Horizontale Linie unter Kolumnentitel.
-    plainheadsepline,   % Horizontale Linie auch beim plain-Style.
-    open=any,           % Kapitel können auf geraden und ungeraden Seiten beginnen.
-    listof=totoc,       % Abbildungsverzeichnis und Tabellenverzeichnis im Inhaltsverzeichnis.
-    bibliography=totoc, % Literaturverzeichnis wird in das Inhaltsverzeichnis eingetragen.
-    numbers=noenddot    % Kein Punkt nach der letzter Kapitelzahl.
+  paper=a4,
+  oneside,
+  fontsize=12pt,
+  headinclude,
+  headsepline,
+  plainheadsepline,
+  open=any,
+  listof=totoc,
+  bibliography=totoc,
+  numbers=noenddot
 ]{scrbook}
 
-\usepackage{hyperref} % Einstellungen des PDF Dokumentes. Links und Verweise erzeugen.
+\RequirePackage[hidelinks, unicode]{hyperref}
+\RequirePackage{bookmark}
 \hypersetup {
-    pdfstartview = {FitV},                      % Legt fest wie das PDF geöffnet wird.
-    pdfview = {FitH},                           % Legt fest wie das PDF geöffnet wird.
-    pdffitwindow = {true}                       % PDF ins Fenster einpassen.
-    breaklinks = {true},                        % Erlaubt Zeilenumbrüche in Links.
-    colorlinks = {true},                        % Erlaubt farbige Links.
-    linkcolor = {link_color},                   % Farbe für Inhaltsverzeichnis und Seitenzahlen.
-    citecolor = {link_color},                   % Farbe für Zitate.
-    urlcolor = {link_color},                    % Farbe für Hyperlinks.
-    pdftitle = {TitelDerArbeitHierEintragen},   % Titel der Arbeit.
-    pdfsubject = {ThemaDerArbeitHierEintragen}, % Thema der Arbeit.
-    pdfauthor = {NameDesAutorsHierEintragen}    % Autor/in der Arbeit.
+  pdfstartview = {FitV},
+  pdfview = {FitH},
+  pdffitwindow = true,
+  breaklinks = true,
+  colorlinks = true,
+  linkcolor = {link_color},
+  citecolor = {link_color},
+  urlcolor = {link_color},
+  pdftitle = {TitelDerArbeitHierEintragen},   % Title
+  pdfsubject = {ThemaDerArbeitHierEintragen}, % Topic
+  pdfauthor = {NameDesAutorsHierEintragen}    % Author
 }
 
 % ==============================================================================
-% Language / Sprache
+% 2. Language
 % ==============================================================================
 
-\usepackage[latin1]{inputenc} % Input-Encodung: latin1 für Unix.
-\usepackage[T1]{fontenc}      % T1-kodierte Schriften, korrekte Trennmuster für Worte mit Umlaute.
-\usepackage[ngerman]{babel}   % Neue Rechtschreibung.
+\RequirePackage[latin1]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[ngerman]{babel}
 
 % ==============================================================================
-% Symbols / Symbole
+% 3. Layout
 % ==============================================================================
 
-\usepackage{amsmath}  % Erweiterung für den Mathe-Satz.
-\usepackage{amsfonts} % Zusätzliche mathematische Symbole.
-\usepackage{textcomp} % Stellt unter anderem das Symbol Copyright zur Verfügung.
-\usepackage{wasysym}  % Verschiedene Symbole.
+\RequirePackage{geometry}
+\RequirePackage{lscape}
 
 % ==============================================================================
-% Page formatting / Seitenformatierung
+% 4. Header and Footer
 % ==============================================================================
 
-\usepackage{geometry}         % Ermöglicht Randeinstellungen individuell zu ändern.
-\usepackage{scrlayer-scrpage} % Kopf- und Fußzeilen-Layout.
-\usepackage{lscape}           % Ermöglicht Seiten im Querformat.
+\RequirePackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\renewcommand{\headfont}{\normalfont\sffamily}
+\renewcommand{\pnumfont}{\normalfont\sffamily}
 
-\usepackage{chngcntr}              % Counter für durchgängige Nummerierung.
-\counterwithout{figure}{chapter}   % Bilder Zählwert in arabische Ziffern.
-\counterwithout{table}{chapter}    % Tabellen Zählwert in arabische Ziffern.
-\counterwithout{equation}{chapter} % Formal Zählwert in arabische Ziffern.
-
-\usepackage[titles]{tocloft}                                      % Bewirkt das Titel der ToC-, LoF- und LoT-Listen mit Standard-LATEX-Methoden gesetzt werden.
-\addtokomafont{sectioning}{\normalcolor\bfseries\fontfamily{phv}} % Kapitelüberschrift in Fett.
-\renewcommand{\thefigure}{\bfseries\arabic{figure}}               % Bilder bezifferung erfolgt in Arabische Ziffern.
-\renewcommand{\thetable}{\bfseries\arabic{table}}                 % Tabellen bezifferung erfolgt in Arabische Ziffern.
-
-% ==============================================================================
-% Header and Footer / Kopf- und Fußzeile
-% ==============================================================================
-
-\pagestyle{scrheadings}                        % Stil der Kopf- und Fußzeilen.
-\renewcommand{\headfont}{\normalfont\sffamily} % Kolumnentitel serifenlos.
-\renewcommand{\pnumfont}{\normalfont\sffamily} % Seitennummern serifenlos.
-
-% Header / Kopfzeile
+% Header
 % ==================================================
-\ihead[]{\headmark}          % Innen (Kolumnentitel immer oben).
-\chead[]{}                   % Mitte.
-\ohead[\pagemark]{\pagemark} % Außen (Seitennummern immer oben).
+\ihead[]{\headmark}          % Inner
+\chead[]{}                   % Center
+\ohead[\pagemark]{\pagemark} % Outer
 
-% Footer / Fußzeile
+% Footer
 % ==================================================
-\ifoot[]{} % Innen.
-\cfoot[]{} % Mitte.
-\ofoot[]{} % Außen.
+\ifoot[]{} % Inner
+\cfoot[]{} % Center
+\ofoot[]{} % Outer
 
 % ==============================================================================
-% Text formatting / Textformatierung
+% 5. Text
 % ==============================================================================
 
-\usepackage{float}                   % Erlaubt die genaue Plazierung von Gleitobjekten mit H.
-\usepackage{scrhack}                 % Unterdrückt eine Warnung bei Verwendung von float und/oder listings.
+\RequirePackage[titles]{tocloft}
+\RequirePackage{parskip}
+\RequirePackage{setspace}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+\onehalfspacing
+\RequirePackage{float}
+\RequirePackage{scrhack}
 
-\usepackage{parskip}                 % Erste Zeile nicht einrücken.
-\usepackage{setspace}                % Zeilenabstand einstellbar.
-\onehalfspacing                      % Zeilenabstand auf eineinhalbzeilig einstellen.
-\usepackage{multicol}                % Erlaubt mehrspaltiger Text.
-\usepackage{multirow}                % Erlaubt mehrzeiliger Text.
+\RequirePackage{xcolor}
+\definecolor{link_color}{HTML}{000000}
 
-\usepackage{xcolor}                  % Ermöglicht Schriftfarben zu ändern.
-\definecolor{link_color}{rgb}{0,0,0} % Textfarbe Links (schwarz).
-
-\usepackage{caption}                 % Ermöglicht Untertitel zu formatieren.
-\usepackage{subcaption}              % Ermöglicht UnterUntertitel zu formatieren.
+\addtokomafont{sectioning}{\normalcolor\bfseries\fontfamily{phv}}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
 \captionsetup{
-    justification={centering},
-    singlelinecheck={false},
-    textformat={period},
-    font={footnotesize},
-    labelfont={bf},
-    labelsep={colon},
-    figurename={Abb.},
-    tablename={Tab.}
-}                                    % Aussehen Untertitel.
+  justification={centering},
+  singlelinecheck={false},
+  textformat={period},
+  font={footnotesize},
+  labelfont={bf},
+  labelsep={colon},
+  figurename={Abb.},
+  tablename={Tab.}
+}
 
-\usepackage{paralist}                % Erweiterung / Modifikation der Listenumgebungen.
-
-% ==============================================================================
-% Images / Bilder
-% ==============================================================================
-
-\usepackage{graphicx}            % Ermöglicht Bilder einzubinden.
-\renewcommand{\figurename}{Abb.} % Umbenennung: Abbildung => Abb.
-\usepackage[export]{adjustbox}   % Makros um Inhalt von Boxen anzupassen.
-\usepackage{epstopdf}            % Konvertierung von EPS (Encapsulated Postscript) zu PDF vor dem kompilieren.
+\RequirePackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+\renewcommand{\thefigure}{\bfseries\arabic{figure}}
+\renewcommand{\thetable}{\bfseries\arabic{table}}
+\RequirePackage{paralist}
 
 % ==============================================================================
-% Spreadsheets / Tabellen
+% 6. Literature and References
 % ==============================================================================
 
-\usepackage{colortbl}                                     % Möglichkeit Reihen/Spalten/einzelne Zellen farblich gestalten.
-\usepackage{tabularx}                                     % Möglichkeit Tabellen eine bestimmte Breite vorzugeben.
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % Linksbündig mit Breitenangabe.
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}   % Zentriert mit Breitenangabe.
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}  % Rechtsbündig mit Breitenangabe.
-
-% ==============================================================================
-% Literature and References / Literatur und Referenzen
-% ==============================================================================
-
-\usepackage[
+\RequirePackage[
   backend=biber,
   style=numeric
-]{biblatex}                                           % Biblatex Einstellungen.
-\addbibresource{./assets/literature/bibliography.bib} % Bibliography Datei.
-\usepackage{csquotes}                                 % Helper Package.
+]{biblatex}
+\addbibresource{./assets/literature/bibliography.bib}
+\RequirePackage{csquotes}
+
+% ==============================================================================
+% 7. Images
+% ==============================================================================
+
+\RequirePackage{graphicx}
+\renewcommand{\figurename}{Abb.}
+\RequirePackage[export]{adjustbox}
+
+% ==============================================================================
+% 8. Spreadsheets
+% ==============================================================================
+
+\RequirePackage{colortbl}
+\RequirePackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% ==============================================================================
+% 9. Symbols
+% ==============================================================================
+
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{textcomp}
+\RequirePackage{wasysym}
 
 % ==============================================================================
 %  ____                                        _
@@ -176,83 +175,72 @@
 
 \begin{document}
 
-    \pagenumbering{Roman} % Seitennummerierung in römische Ziffern.
+  \pagenumbering{Roman}
 
-    % Cover Page / Deckblatt
-    % ==================================================
-    \newgeometry{top=1.5cm, bottom=2cm, left=1.8cm, right=1cm} % Ränder Deckblatts.
-    \include{./pages/deckblatt}
+  % Cover page
+  % ==================================================
+  \newgeometry{top=1.5cm, bottom=2cm, left=1.8cm, right=1cm}
+  \include{./pages/deckblatt}
 
-    % Restore defaults / Standarts wiederherstellen
-    % ==================================================
-    \restoregeometry         % Standartränder wiederherstellen.
-    \setcounter{figure}{0}   % Abbildungszähler resetten.
-    \setcounter{table}{0}    % Tabellenzähler resetten.
-    \setcounter{equation}{0} % Formelzähler resetten.
+  % Restore defaults
+  % ==================================================
+  \restoregeometry
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \setcounter{equation}{0}
 
-    % Blank page / Leerseite
-    % ==================================================
-    \newpage
-    \thispagestyle{empty}
-    \quad
-    \newpage
+  % Blank page
+  % ==================================================
+  \newpage
+  \thispagestyle{empty}
+  \quad
+  \newpage
 
-    % Declaration / Erklärung
-    % ==================================================
-    %\cleardoubleemptypage
-    \include{./pages/erklaerung}
+  % Declaration
+  % ==================================================
+  \include{./pages/erklaerung}
 
-    % Acknowledgement / Danksagung
-    % ==================================================
-    %\cleardoubleemptypage
-    \include{./pages/danksagung}
+  % Acknowledgement
+  % ==================================================
+  \include{./pages/danksagung}
 
-    % Registers / Verzeichnisse
-    % ==================================================
-    %\cleardoubleemptypage
-    \begin{spacing}{1.0}
-        \tableofcontents                % Inhaltsverzeichnis.
-    \end{spacing}
-    %\cleardoubleemptypage
-    \include{./pages/symbolverzeichnis}
-    \begin{spacing}{1.0}
-        %\cleardoubleemptypage
-        \listoffigures                  % Abbildungsverzeichnis.
-        %\cleardoubleemptypage
-        \listoftables                   % Tabellenverzeichnis.
-    \end{spacing}
+  % Registers
+  % ==================================================
+  \begin{spacing}{1.0}
+    \tableofcontents
+  \end{spacing}
+  \include{./pages/symbolverzeichnis}
+  \begin{spacing}{1.0}
+    \listoffigures
+    \listoftables
+  \end{spacing}
 
-    % Abstract / Kurzfassung
-    % ==================================================
-    %\cleardoubleemptypage
-    \include{./pages/kurzfassung}
-    %\cleardoubleemptypage
-    \include{./pages/abstract} % Kurzfassung in Englisch.
+  % Abstract
+  % ==================================================
+  \include{./pages/kurzfassung}
+  \include{./pages/abstract}
 
-    % Main chapters / Hauptkapitel
-    % ==================================================
-    %\cleardoubleplainpage
-    \mainmatter                  % Hauptinhalt des Dokuments. Seitennummerierung in arabische Ziffern.
-    \include{./pages/einleitung}
-    \include{./pages/grundlagen}
-    \include{./pages/hauptteil}
-    \include{./pages/schluss}
+  % Main chapters
+  % ==================================================
+  \mainmatter
+  \include{./pages/einleitung}
+  \include{./pages/grundlagen}
+  \include{./pages/hauptteil}
+  \include{./pages/schluss}
 
-    % Bibliography / Literaturverzeichnis
-    % ==================================================
-    %\cleardoubleplainpage
-    \printbibliography[title=Literaturverzeichnis]
+  % Bibliography
+  % ==================================================
+  \printbibliography[title=Literaturverzeichnis]
 
-    % Appendix / Anhang
-    % ==================================================
-    %\cleardoubleplainpage
-    \include{./pages/anhang}
+  % Appendix
+  % ==================================================
+  \include{./pages/anhang}
 
-    % Blank page / Leerseite
-    % ==================================================
-    \newpage
-    \thispagestyle{empty}
-    \quad
-    \newpage
+  % Blank page
+  % ==================================================
+  \newpage
+  \thispagestyle{empty}
+  \quad
+  \newpage
 
 \end{document}
