@@ -5,7 +5,7 @@
 
 # LaTeX Templates
 
-This repository contains some LaTeX templates.
+Some of my LaTeX templates.
 
 ## Setup
 
@@ -50,10 +50,6 @@ These are the settings that I use in combination with the in the repository cont
 ````
 
 The settings for other editors can be found [here](https://tex.stackexchange.com/questions/154751/biblatex-with-biber-configuring-my-editor-to-avoid-undefined-citations%7C).
-
-## Donations
-
-If you would like to buy me a beer :beer:, you can do this [here](https://paypal.me/timschneiderxyz). Thanks! :heart:
 
 ## License
 
