@@ -1,6 +1,5 @@
 <p align="center">
   <img src="latex.png">
-  <br>
 </p>
 
 # LaTeX Templates
@@ -13,7 +12,7 @@ As the environment I use [VS Code](https://code.visualstudio.com/) with the [LaT
 
 These are the settings that I use in combination with the in the repository contained [.editorconfig](.editorconfig):
 
-````JSON
+````json
 {
   "latex-workshop.message.update.show": false,
   "latex-workshop.view.pdf.viewer": "tab",
